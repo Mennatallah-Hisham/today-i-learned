@@ -1,0 +1,277 @@
+:root{
+    --clr-primary:#fff;
+    --clr-bg:#292524;
+    --clr-bg-light:#78716c;
+    --clr-bg-vl:#d6d3d1;
+    --clr-btn:#a8a29e;
+    --clr-txt:#fafaf9;
+    --ff-body:'Sono', sans-serif;
+    --ff-heading:'Coiny',sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+/************ general **********/
+
+body{
+    background-color: var(--clr-bg);
+    color:var(--clr-txt);
+    padding:1rem 2rem;
+}
+button{
+    cursor: pointer;
+    border-radius: 1rem;
+    border:none;
+    padding:0.5rem 2rem;
+    display: inline-block;
+    text-transform: capitalize;
+    font-family: var(--ff-heading);
+    font-size: 1.6rem;
+    transition: all 0.5s;
+    
+}
+button:hover{
+    transform: scale(1.08);
+}
+
+ul{
+    list-style: none;
+
+}
+
+.fact,
+.form{
+    background-color: var(--clr-bg-light);
+}
+
+/*************** reusable **********/
+
+.m-t{
+    margin-top:1rem;
+}
+
+.hidden{
+    display: none !important;
+}
+
+
+.container{
+    border:1px solid red;
+    width:95%;
+    max-width: 70rem;
+    margin-inline:auto;
+}
+.btn-main{
+    background-image: linear-gradient(90deg,#ED3E4B,#cb2e92,#9C50DD);
+    color:white;
+    transition: all 0.5s;
+}
+.btn-main:hover{
+  transform: translateY(-1rem) scale(1.1);
+
+
+}
+
+/****** header***********/
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    gap:2rem;
+}
+.heading-primary{
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-family: var(--ff-heading);
+    margin-left:1rem;
+    text-align: center;
+}
+.logo{
+    height: 6.4rem;
+  
+}
+.header div{
+    display: flex;
+    align-items: center;
+}
+/*********** form***********/
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:1rem 2rem;
+    border-radius: 1rem;
+    gap:1rem;
+    width:100%;
+
+}
+select,
+input{
+    padding:1rem 1rem;
+    width:32rem;
+    max-width: 100%;
+    border-radius: 1.5rem;
+    background-color: var(--clr-bg-vl);
+    border:none;
+ 
+}
+
+/********** categories ****/
+.sec-categories{
+margin:4rem auto;
+
+
+
+}
+.categories-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:2rem;
+}
+
+
+/***********facts *****************/
+.facts-list{
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
+}
+.fact{
+    font-size: 1.6rem;
+    font-family: var(--ff-body);
+    padding:1rem 2rem;
+    border-radius: 0.5rem;
+/*    
+    max-width: 32rem; */
+    margin-inline: auto;
+    
+}
+
+.fact::first-letter{
+    text-transform: capitalize;
+}
+.fact-source:link,
+.fact-source:visited
+{
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    color:lightgray;
+}
+.fact-source:hover,
+.fact-source:active
+{
+    color:#000;
+}
+.fact-category{
+    font-family: var(--ff-heading);
+    display: inline-block;
+  font-size: 1.4rem;
+    text-transform: capitalize;
+
+}
+
+.btn-react{
+    background-color: var(--clr-btn);
+    transition: all 0.5s;
+}
+
+.btn-react:hover{
+    background-color: var(--clr-bg);
+    color:var(--clr-txt);
+}
+
+
+@media (min-width:900px) {
+   
+       body{
+        padding:2rem 4rem;
+       }
+.container{
+    max-width: 140rem;
+}
+.header{
+    flex-direction: row;
+    gap:0;
+}
+    .main{
+        margin-top:4rem;
+        display: grid;
+        grid-template-columns: 0.6fr 2fr;
+        column-gap: 2rem;
+    }
+    .sec-categories{
+        margin: 0;
+    }
+    .categories-list{
+        flex-direction: column;
+      
+
+ 
+
+    }
+    .categories-list button{
+
+      display: block;
+      width:100%;
+      font-size: 1.8rem;
+    }
+
+    .form{
+     flex-direction: row;
+     justify-content: space-between;
+     padding:2rem ;
+    }
+       select,
+        input{
+            padding:1.5rem 1rem;
+            width:35rem;
+            border-radius: 2rem;
+            background-color: var(--clr-bg-vl);
+            border:none;
+         
+        }
+    .fact{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+        column-gap:0.5rem;
+     align-items: center;
+    }
+    .fact-txt{
+        grid-column: 1/3;
+    }
+    .fact-category{
+        justify-self: right;
+    }
+    .react-btns{
+        grid-column: 2/4;
+        grid-row:2/3;
+        justify-self: right;
+        
+    }
+    .btn-main{
+        font-size: 2rem;
+    }
+  } 
+
+
+  @media (min-width:1500px) {
+    .fact{
+        display: grid;
+        grid-template-columns: 2fr 0.3fr 1fr;
+        column-gap:1.5rem;
+    }
+  }
